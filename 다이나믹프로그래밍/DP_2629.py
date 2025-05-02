@@ -1,21 +1,29 @@
 import sys
+input = sys.stdin.readline
 
-C = int(input()) 
+C = int(input())
 C_list = list(map(int, input().split()))
-B = int(input()) 
+B = int(input())
 B_list = list(map(int, input().split()))
 
-dp = [[0] * (C + 1) for _ in range(B + 1)]
+MAX = 50000
 
-dp[0][0] = True
+for i in B:
+    dp = [[False] * (MAX + 1) for _ in range(C + 1)]
+    dp[0][0] = True
+    for k in range(C):
+        for j in range(MAX+1):
+            if dp[i][j]:
+                dp[i+1][j] = True
+                if dp[i+1][j] + C_list[k]:
+                    dp[i+1][j+C_list[k]] = True
+                dp[i+1][j-C_list[k]] = True
 
-for i in range(B):
-    for j in range(C):
-        if dp[i][j] == True:
-            dp[i+1][j] = dp[i][j]
+
+
+
 
         
-    print(dp[i][j])
 
 # 가치를 크게할 수 있으면 1, 아니면 0으로 놓고 해보기
 # 추를 안달았을 때 dp[i][j]
