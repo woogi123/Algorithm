@@ -1,0 +1,1 @@
+{"name":"Local: DP_1520","url":"c:\\Users\\user\\Desktop\\알고리즘\\다이나믹프로그래밍\\DP_1520.py","tests":[{"id":1746587802223,"input":"4 5\n50 45 37 32 30\n35 50 40 20 25\n30 30 25 17 28\n27 24 22 15 10","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\user\\Desktop\\알고리즘\\다이나믹프로그래밍\\DP_1520.py","group":"local","local":true}
