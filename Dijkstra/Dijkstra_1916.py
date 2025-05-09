@@ -15,7 +15,6 @@ for i in range(2, M + 2):
     graph[start].append((end, cost))
     
 
-
 INF = int(10**12)
 lists = [INF] * (N + 1)
 start, end = map(int, lines[M + 2].split())
