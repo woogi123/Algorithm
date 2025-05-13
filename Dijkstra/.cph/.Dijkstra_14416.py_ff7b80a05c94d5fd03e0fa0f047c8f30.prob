@@ -1,0 +1,1 @@
+{"name":"Local: Dijkstra_14416","url":"c:\\Users\\user\\Desktop\\알고리즘\\Dijkstra\\Dijkstra_14416.py","tests":[{"id":1747098839763,"input":"4 2\n30 92 36 10\n38 85 60 16\n41 13 5 68\n20 97 13 80","output":"31"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\user\\Desktop\\알고리즘\\Dijkstra\\Dijkstra_14416.py","group":"local","local":true}
