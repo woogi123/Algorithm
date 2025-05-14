@@ -1,5 +1,3 @@
-package Java.if_else;
-
 import java.util.Scanner;
 
 public class baekjoon_14681 {
