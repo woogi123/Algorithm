@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "if_else",
-        "while_for"
+        "while_for",
+        "brute_force"
     ]
 }
