@@ -1,0 +1,1 @@
+{"name":"Local: 위상정렬_2252","url":"c:\\Users\\user\\Desktop\\알고리즘\\Python\\위상정렬\\위상정렬_2252.py","tests":[{"id":1747830544883,"input":"3 2\n1 3\n2 3","output":"1 2 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\user\\Desktop\\알고리즘\\Python\\위상정렬\\위상정렬_2252.py","group":"local","local":true}

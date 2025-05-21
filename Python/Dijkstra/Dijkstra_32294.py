@@ -8,37 +8,59 @@ n = int(lines[0])
 a = list(map(int, lines[1].split()))
 b = list(map(int, lines[2].split()))
 
-result = []
+INF = int(10*12)
+
+def dijkstra(c, graph):
+    lists = [INF] * (n+5)
+
+    heap = []
+    heappush(heap, (0, c))
+
+    while len(heap) != 0:
+        cost, node = heappop(heap)
+        if lists[node] > cost:
+            lists[node] = cost
+            for next_node, num in graph[node]:
+                if lists[next_node] > num + cost:
+                    heappush(heap, (num + cost, next_node))
+    return lists
+
+graph_end = [[] for _ in range(n + 2)]
+graph_start = [[] for _ in range(n + 2)]
+
+for i in range(n):
+    jump = a[i]
+    cost = b[i]
+    now = i + 1
+
+    if now - jump < 1:
+        graph_start[now].append((0, cost))
+    else:
+        graph_start[now].append((now - jump, cost))
+
+    if now + jump > n:
+        graph_end[now].append((n+1, cost))
+    else:
+        graph_end[now].append((now + jump, cost))
+
 
 for i in range(1, n + 1):
-    if i - a[i-1] < 1 or i + a[i-1] > n:
-        result.append(b[i-1])
+    lists_end = dijkstra(i, graph_end)
+    lists_start = dijkstra(i, graph_start)
+
+    if lists_end[n+1] > lists_start[0]:
+        print(lists_start[0], end=" ")
     else:
-        left = i
-        left_cost = b[i-1]
-        right = i
-        right_cost = b[i-1]
+        print(lists_end[n + 1], end=" ")
 
-        while True:
-            left = left - a[left - 1]
-            if left < 1:
-                break
-            left_cost += b[left - 1]
 
-            right = right + a[right - 1]
-            if right > n:
-                break
-            right_cost += b[right - 1]
 
-        if left_cost < right_cost:
-            result.append(left_cost)
-        else:
-            result.append(right_cost)
 
-for i in result:
-    print(i, end=" ")
+
+# 왼쪽으로 점프하는 경우 vs 오른쪽으로 점프하는 경우 해서 최솟값
 
 # 모든 위치를 노드로 생각
 # 수열 밖으로 나가는 위치(탈출 지점)를 도착 노드로 간주
+# 0은 start, n은 end
 # 각 위치에서 점프할 수 있는 곳으로 간선 (비용은 b[i])을 생성
-# 다익스트라 알고리즘으로 각 위치에서 탈출 노드까지의 최단 시간 계산
+# 다익스트라로 각 위치에서 탈출 노드까지의 최단 시간 계산

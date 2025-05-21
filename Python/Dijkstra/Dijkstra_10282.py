@@ -30,7 +30,6 @@ for _ in range(N):
     for i in range(num + 1, num + d+1):
         start, end, cost = map(int, lines[i].split())
         graph[end].append((start, cost))
-    
     num += d + 1
     INF = int(10**12)
 
