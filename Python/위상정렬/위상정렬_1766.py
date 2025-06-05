@@ -16,8 +16,6 @@ for i in range(1, M + 1):
 
 q = []
 
-print(indegree)
-
 for i in range(1, N + 1):
     if indegree[i] == 0:
         q.append(i)
