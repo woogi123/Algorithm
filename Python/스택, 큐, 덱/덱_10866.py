@@ -45,3 +45,6 @@ for i in lst:
             print(-1)
         else:
             print(deq[-1])
+
+
+#deq
